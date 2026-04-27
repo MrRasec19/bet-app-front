@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.0] - 2026-04-27
+
+### Added
+
+- Nuxt 4 strict folder structure: all source code moved to `app/` directory
+  - `app/components/` - Vue components
+  - `app/composables/` - Vue composables
+  - `app/layouts/` - Page layouts
+  - `app/middleware/` - Route middleware
+  - `app/pages/` - Application pages
+  - `app/plugins/` - Nuxt plugins
+  - `app/types/` - TypeScript definitions
+
+### Changed
+
+- Updated `nuxt.config.ts` with `future.compatibilityVersion: 4`
+- Updated CSS path to use `~/assets/css/main.css`
+
 ## [v0.1.0] - 2026-04-27
 
 ### Added

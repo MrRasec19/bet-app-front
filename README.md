@@ -1,6 +1,6 @@
 # casino-web-front
 
-A modern web frontend for a casino platform built with Nuxt 3, featuring casino games, sportsbook, wallet management, and internationalization support.
+A modern web frontend for a casino platform built with Nuxt 4, featuring casino games, sportsbook, wallet management, and internationalization support.
 
 ## Prerequisites
 
@@ -32,41 +32,51 @@ npm install
 
 ```
 casino-web-front/
-├── app/                    # Application root
+├── app/                    # Application source (Nuxt 4 structure)
 │   ├── app.vue            # Root component
-│   └── assets/           # Static assets
-├── components/            # Vue components
-│   ├── account/          # Account-related components
-│   ├── base/             # Base components
-│   ├── casino/           # Casino game components
-│   ├── common/           # Shared/common components
-│   └── sportsbook/       # Sportsbook components
-├── composables/          # Vue composables
-│   ├── account/          # Account logic
-│   ├── casino/           # Casino logic
-│   ├── core/             # Core utilities (API, Auth, WebSocket)
-│   └── sportsbook/       # Sportsbook logic
-├── i18n/                 # Internationalization
-│   ├── en.json           # English translations
-│   └── es.json           # Spanish translations
-├── layouts/              # Page layouts
-│   ├── auth.vue          # Authentication layout
-│   ├── default.vue       # Default layout
-│   └── sportsbook.vue    # Sportsbook layout
-├── middleware/           # Nuxt middleware
-│   ├── auth.global.ts   # Global auth middleware
-│   ├── guest.ts         # Guest-only routes middleware
-│   ├── kyc.ts           # KYC verification middleware
-│   └── responsible-gaming.ts # Responsible gaming middleware
-├── pages/                # Application pages
-│   └── sportsbook/       # Sportsbook pages
-├── plugins/              # Nuxt plugins
-│   ├── analytics.client.ts # Client-side analytics
-│   ├── api.ts           # API plugin
-│   ├── i18n.ts          # i18n plugin
-│   └── socket.client.ts  # WebSocket client plugin
-├── server/               # Server-side code
+│   ├── assets/            # Static assets
+│   │   └── css/          # Stylesheets
+│   ├── components/        # Vue components
+│   │   ├── account/      # Account-related components
+│   │   ├── base/         # Base components
+│   │   ├── casino/       # Casino game components
+│   │   ├── common/       # Shared/common components
+│   │   └── sportsbook/   # Sportsbook components
+│   ├── composables/      # Vue composables
+│   │   ├── account/      # Account logic
+│   │   ├── casino/       # Casino logic
+│   │   ├── core/         # Core utilities (API, Auth, WebSocket)
+│   │   └── sportsbook/   # Sportsbook logic
+│   ├── layouts/          # Page layouts
+│   │   ├── auth.vue     # Authentication layout
+│   │   ├── default.vue  # Default layout
+│   │   └── sportsbook.vue # Sportsbook layout
+│   ├── middleware/       # Nuxt middleware
+│   │   ├── auth.global.ts # Global auth middleware
+│   │   ├── guest.ts     # Guest-only routes middleware
+│   │   ├── kyc.ts       # KYC verification middleware
+│   │   └── responsible-gaming.ts # Responsible gaming middleware
+│   ├── pages/           # Application pages
+│   │   ├── account/     # Account pages
+│   │   ├── auth/        # Authentication pages
+│   │   ├── casino/      # Casino pages
+│   │   ├── live/        # Live casino pages
+│   │   ├── promotions/  # Promotions pages
+│   │   └── sportsbook/  # Sportsbook pages
+│   ├── plugins/         # Nuxt plugins
+│   │   ├── analytics.client.ts # Client-side analytics
+│   │   ├── api.ts       # API plugin
+│   │   ├── i18n.ts      # i18n plugin
+│   │   └── socket.client.ts # WebSocket client plugin
+│   └── types/           # TypeScript type definitions
+│       └── api/         # API types
+├── i18n/                # Internationalization
+│   ├── en.json          # English translations
+│   └── es.json          # Spanish translations
+├── server/              # Server-side code
 │   ├── api/             # API routes
+│   │   ├── proxy/       # Proxy routes
+│   │   └── health.get.ts # Health check endpoint
 │   └── utils/           # Server utilities
 ├── services/            # Business logic services
 │   ├── api.client.ts    # HTTP client
@@ -79,15 +89,18 @@ casino-web-front/
 │   ├── constants/       # Application constants
 │   └── schemas/         # Validation schemas
 ├── stores/              # Pinia stores
-├── types/               # TypeScript type definitions
-│   ├── api/            # API types
-│   ├── casino.ts       # Casino types
-│   ├── sportsbook.ts   # Sportsbook types
-│   └── wallet.ts       # Wallet types
-└── utils/               # Utility functions
-    ├── constants/       # Constants
-    ├── formatters/      # Formatters
-    └── validators/      # Validators
+├── tests/               # Test files
+│   ├── e2e/            # End-to-end tests
+│   └── unit/           # Unit tests
+├── public/              # Static public files
+├── types/               # Global TypeScript types
+├── utils/               # Utility functions
+│   ├── constants/       # Constants
+│   ├── formatters/     # Formatters
+│   └── validators/     # Validators
+├── nuxt.config.ts       # Nuxt configuration
+├── tsconfig.json       # TypeScript configuration
+└── package.json        # Dependencies
 ```
 
 ## Features
@@ -103,7 +116,7 @@ casino-web-front/
 
 ### Technical Stack
 
-- **Framework**: [Nuxt 3](https://nuxt.com/)
+- **Framework**: [Nuxt 4](https://nuxt.com/)
 - **UI**: [@nuxt/ui](https://ui.nuxt.com/)
 - **State Management**: [Pinia](https://pinia.vuejs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
